@@ -1,0 +1,90 @@
+.home {
+  background: var(--gray);
+  padding: 80px 30px 30px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .home-content {
+  width: 75%;
+}
+
+.home .home-content h2 {
+  font-size: 5.5rem;
+  color: var(--white);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.home .home-content p {
+  font-size: 1.7rem;
+  color: var(--white);
+  margin-top: 16px;
+  text-align: justify;
+  font-weight: 500;
+}
+
+.home .home-content .dyk {
+  font-size: 1.4rem;
+  text-align: center;
+  color: var(--black2);
+}
+
+.home .home-content a {
+  display: block;
+  text-align: center;
+}
+
+.home .home-content a button {
+  padding: 10px 50px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--black);
+  border: solid 3px var(--black);
+  margin: 30px auto;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 0px 0px;
+    background: var(--white);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  &::after {
+    content: "Learn More";
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    opacity: 0;
+    color: var(--black);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+  &:hover::before {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 617px) {
+  .home {
+    padding: 20px 0;
+  }
+
+  .home-content {
+    width: 100%;
+  }
+}

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.conclusion {
+  background: var(--gray);
+  padding: 80px 30px 30px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.conclusion-content {
+  width: 60%;
+}
+
+.conclusion-content h1 {
+  font-size: 4rem;
+  color: var(--blue);
+}
+
+.conclusion-content p {
+  font-size: 1.5rem;
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 2;
+  text-align: justify;
+}
+
+.conclusion .faq-container {
+  width: 35%;
+}
+
+.conclusion .faq-container .conclusion .faq-container h2 {
+  font-size: 2.2rem;
+  text-align: left;
+  margin-bottom: 50px;
+  color: var(--white);
+}
+
+.conclusion .faq .faq-btn {
+  background: var(--blue);
+  border-bottom: solid 4px var(--black2);
+  padding: 5px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--black);
+    color: var(--white);
+    border-bottom: solid 4px var(--white);
+  }
+}
+
+.conclusion .faq.active .faq-btn {
+  border-bottom: solid 4px var(--black2);
+}
+
+.panel {
+  background: var(--black);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.panel p {
+  padding: 5px 10px;
+  line-height: 1.7;
+  font-size: 1.2rem;
+  text-align: justify;
+  color: #dde6ed;
+}
+
+@media (max-width: 617px) {
+  .conclusion-content {
+    width: 90%;
+  }
+
+  .conclusion {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .conclusion .faq-container {
+    width: 100%;
+  }
+}

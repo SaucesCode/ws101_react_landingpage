@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  z-index: 100;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-style: normal;
+  cursor: default;
+}
+
+.header .navbar {
+  width: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header .navbar li {
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.header .navbar li.active {
+  background: var(--black);
+  border-radius: 10px;
+  position: relative;
+  transition: 200ms ease;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  overflow: hidden;
+
+  &::after {
+    content: attr(data-nav);
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 700;
+    top: 40;
+    left: 10px;
+    color: var(--white);
+    transition: 200ms;
+  }
+}
+
+.header .navbar li a {
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--black);
+    width: 101%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+    border-radius: 10px;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    transform: translateY(0);
+  }
+
+  &::after {
+    content: attr(data-nav);
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    z-index: 2;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: transform 0.5s;
+    color: var(--white);
+  }
+
+  &:hover::after {
+    top: 9px;
+    opacity: 1;
+    color: var(--white);
+    transform: scale(1);
+  }
+
+  &:active {
+    color: var(--black2);
+  }
+}
+
+@media (max-width: 617px) {
+  .header .navbar li a::before {
+    content: "";
+    opacity: 0;
+  }
+
+  /* .header .navbar li a::after {
+    content: "";
+  } */
+}
